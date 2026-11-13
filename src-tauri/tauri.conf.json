@@ -38,7 +38,7 @@
   },
   "plugins": {
     "updater": {
-      "pubkey": "untrusted comment: minisign public key: F93C40D81F7EDE14\nRWQU3n4f2EA8+azh2aWrbkQrM0PO7JEkmLO46Dbkoof4pfF/hF8L7zSx",
+      "pubkey": "RWQU3n4f2EA8+azh2aWrbkQrM0PO7JEkmLO46Dbkoof4pfF/hF8L7zSx",
       "endpoints": [
         "https://github.com/tvoyk4nt/zapret-control/releases/latest/download/latest.json"
       ]
