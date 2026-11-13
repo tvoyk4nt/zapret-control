@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Zapret Control",
+  "version": "0.1.0",
+  "identifier": "com.darkole.zapretcontrol",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "title": "Zapret Control",
+        "width": 800,
+        "height": 600,
+        "minWidth": 700,
+        "minHeight": 500
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "createUpdaterArtifacts": true
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "untrusted comment: minisign public key: F93C40D81F7EDE14\nRWQU3n4f2EA8+azh2aWrbkQrM0PO7JEkmLO46Dbkoof4pfF/hF8L7zSx",
+      "endpoints": [
+        "https://github.com/tvoyk4nt/zapret-control/releases/latest/download/latest.json"
+      ]
+    }
+  }
+}
