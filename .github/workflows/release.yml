@@ -26,6 +26,24 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Check signing secrets
+        shell: pwsh
+        env:
+          SIGNING_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          SIGNING_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+        run: |
+          if ([string]::IsNullOrWhiteSpace($env:SIGNING_KEY)) {
+            Write-Error "TAURI_SIGNING_PRIVATE_KEY is missing"
+          } else {
+            Write-Host "Private key is available"
+          }
+
+          if ([string]::IsNullOrWhiteSpace($env:SIGNING_PASSWORD)) {
+            Write-Error "TAURI_SIGNING_PRIVATE_KEY_PASSWORD is empty"
+          } else {
+            Write-Host "Password is available"
+          }
+
       - name: Build and publish release
         uses: tauri-apps/tauri-action@v1
         env:
