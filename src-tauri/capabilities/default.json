@@ -7,8 +7,8 @@
   ],
   "permissions": [
     "core:default",
-    "updater:default",
     "opener:default",
+    "dialog:default",
     {
       "identifier": "opener:allow-open-path",
       "allow": [
